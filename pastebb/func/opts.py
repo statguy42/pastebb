@@ -9,8 +9,8 @@ file_types = [
     ("Python file", "*.py"),
     ("R script file", "*.R")
 ]
-for name, type in file_types:
-    file_types[0][1] += type + " "
+for name, extension in file_types:
+    file_types[0][1] += extension + " "
 
 # TODO: add more syntax
 paste_syntax = {
