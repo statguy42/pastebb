@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+
 from gui.pbintab import PastebinTab
 
 class MainWindow(tk.Tk):

@@ -46,9 +46,10 @@ class NewPasteTab(ttk.Frame):
         filename = askopenfilename(parent = self, title = "Select file to open")
         # TODO: set allowed filetypes
         # TODO: add error handling
-        with open(filename) as f:
-            self.textarea.delete("1.0", "end")
-            self.textarea.insert("end", f.read())
+        if filename != "":
+            with open(filename) as f:
+                self.textarea.delete("1.0", "end")
+                self.textarea.insert("end", f.read())
 
 
 class PasteOptionsFrame(ttk.Frame):
