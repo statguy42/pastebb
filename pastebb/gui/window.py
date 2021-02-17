@@ -9,7 +9,7 @@ class MainWindow(tk.Tk):
 
         self.tabs = ttk.Notebook(self)
         self.pbin_tab = PastebinTab(self.tabs)
-        self.imgbb_tab = ttk.Frame(self.tabs)
+        self.imgbb_tab = ttk.Frame(self.tabs)    # TODO
         self.tabs.add(self.pbin_tab, text = "Pastebin")
         self.tabs.add(self.imgbb_tab, text = "ImgBB")
         self.tabs.pack(expand = 1, fill = "both")
