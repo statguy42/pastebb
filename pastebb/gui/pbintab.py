@@ -43,7 +43,7 @@ class NewPasteTab(ttk.Frame):
         self.textarea.insert("end", self.clipboard_get())
 
     def get_text_from_file(self):
-        filename = askopenfilename(parent = self, title = "Select file to open")
+        filename = askopenfilename(parent = self, title = "Select file to open", filetypes = opts.file_types)
         # TODO: set allowed filetypes
         # TODO: add error handling
         if filename != "":

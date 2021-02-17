@@ -1,4 +1,17 @@
-# TODO: add filetypes for open file dialogs
+# TODO: add more filetypes
+file_types = [
+    ["All supprted file types", ""],
+    ("Plain text", "*.txt"),
+    ("Bash script", "*.sh"),
+    ("Batch script", "*.bat"),
+    ("C file", "*.c"),
+    ("C++ file", "*.cpp"),
+    ("Python file", "*.py"),
+    ("R script file", "*.R")
+]
+for name, type in file_types:
+    file_types[0][1] += type + " "
+
 # TODO: add more syntax
 paste_syntax = {
     "None": "text",
