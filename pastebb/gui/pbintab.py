@@ -60,11 +60,11 @@ class PasteOutputFrame(ttk.Frame):
         self.link_entry = ttk.Entry(self, textvariable = self.link_var, state = tk.DISABLED)
         self.link_entry.grid(row = 0, column = 1)
 
-        self.copy_link_button = ttk.Button(self, text = "Copy link", command = self.copy_link)
+        self.copy_link_button = ttk.Button(self, text = "Copy link", command = lambda: self.copy_link(self.link_var.get()))
         self.copy_link_button.grid(row = 0, column = 2)
 
-    def copy_link(self):
+    def copy_link(self, link):
         if self.error_status == 0:
             # only if no error occured
             self.clipboard_clear()
-            self.clipboard_append(self.link_var.get())
+            self.clipboard_append(link)
