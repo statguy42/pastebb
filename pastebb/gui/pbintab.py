@@ -3,6 +3,8 @@ from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
 from tkinter.filedialog import askopenfilename
 
+from func import opts
+
 class PastebinTab(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
@@ -53,8 +55,29 @@ class PasteOptionsFrame(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
         
-        self.placeholder = ttk.Label(self, text = "options here")
-        self.placeholder.grid(row = 0, column = 0)
+        self.paste_name_label = ttk.Label(self, text = "Paste name:")
+        self.paste_name_label.grid(row = 0, column = 0)
+        self.paste_name_var = tk.StringVar()
+        self.paste_name_entry = ttk.Entry(self, textvariable = self.paste_name_var)
+        self.paste_name_entry.grid(row = 0, column = 1)
+
+        self.paste_syntax_label = ttk.Label(self, text = "Syntax highlighting:")
+        self.paste_syntax_label.grid(row = 1, column = 0)
+        self.paste_syntax_combo = ttk.Combobox(self, values = list(opts.paste_syntax.keys()))
+        self.paste_syntax_combo.current(0)
+        self.paste_syntax_combo.grid(row = 1, column = 1)
+
+        self.paste_expire_label = ttk.Label(self, text = "Paste Expiry:")
+        self.paste_expire_label.grid(row = 2, column = 0)
+        self.paste_expire_combo = ttk.Combobox(self, values = list(opts.paste_expiry.keys()))
+        self.paste_expire_combo.current(0)
+        self.paste_expire_combo.grid(row = 2, column = 1)
+
+        self.paste_privacy_label = ttk.Label(self, text = "Paste privacy")
+        self.paste_privacy_label.grid(row = 3, column = 0)
+        self.paste_privacy_combo = ttk.Combobox(self, values = list(opts.paste_privacy.keys()))
+        self.paste_privacy_combo.current(0)
+        self.paste_privacy_combo.grid(row = 3, column = 1)
 
         self.submit_button = ttk.Button(self, text = "Submit")
         self.submit_button.grid(row = 4, column = 0, columnspan = 2)
