@@ -1,6 +1,7 @@
 # TODO: add more filetypes
-file_types = [
-    ["All supprted file types", ""],
+paste_file_types = [
+    ["All supprted files", ""],
+    ("All files", "*"),
     ("Plain text", "*.txt"),
     ("Bash script", "*.sh"),
     ("Batch script", "*.bat"),
@@ -9,8 +10,8 @@ file_types = [
     ("Python file", "*.py"),
     ("R script file", "*.R")
 ]
-for name, extension in file_types:
-    file_types[0][1] += extension + " "
+for _, extension in paste_file_types[2::]:
+    paste_file_types[0][1] += extension + " "
 
 # TODO: add more syntax
 paste_syntax = {
